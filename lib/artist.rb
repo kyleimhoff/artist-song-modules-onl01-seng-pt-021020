@@ -39,5 +39,7 @@ class Artist
   def to_param
     name.downcase.gsub(' ', '-')
   end
-  
+  def self.find_by_name(name)
+    @@artists.detect{|a| a.name == name}
+  end
 end
